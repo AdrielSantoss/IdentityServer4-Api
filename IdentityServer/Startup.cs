@@ -2,62 +2,83 @@
 // Licensed under the Apache License, Version 2.0. See LICENSE in the project root for license information.
 
 
+using AutoMapper.Configuration;
+using IdentityServer4;
+using IdentityServerHost.Quickstart.UI;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
+using System.Reflection;
 
 namespace IdentityServer
 {
     public class Startup
     {
-        public IWebHostEnvironment Environment { get; }
+        public IConfiguration Configuration { get; }
 
-        public Startup(IWebHostEnvironment environment)
+        public Startup(IConfiguration configuration)
         {
-            Environment = environment;
+            Configuration = configuration;
         }
-
         public void ConfigureServices(IServiceCollection services)
         {
-            var builder = services.AddIdentityServer()
-                .AddDeveloperSigningCredential()        //This is for dev only scenarios when you don’t have a certificate to use.
-                .AddInMemoryApiScopes(Config.ApiScopes)
-                .AddInMemoryClients(Config.Clients);
+            services.AddControllersWithViews();
 
-            services.AddAuthorization(options =>
-            {
-                options.AddPolicy("ApiScope", policy =>
+            /* var builder = services.AddIdentityServer()
+                 .AddInMemoryIdentityResources(Config.IdentityResources)
+                 .AddInMemoryApiScopes(Config.ApiScopes)
+                 .AddInMemoryClients(Config.Clients)
+                 .AddTestUsers(TestUsers.Users); */ //Usando informações em memória
+
+
+            var migrationsAssembly = typeof(Startup).GetTypeInfo().Assembly.GetName().Name;
+            const string connectionString = @"Data Source=(LocalDb)\MSSQLLocalDB;database=IdentityServer4.Quickstart.EntityFramework-4.0.0;trusted_connection=yes;";
+
+            services.AddIdentityServer()
+                .AddTestUsers(TestUsers.Users)
+                .AddConfigurationStore(options => //adiciona as configurações do banco de dados 
+                {                                //Configurações do contexto do banco de dados e configurações de conexão e suporte com banco de dados 
+                    options.ConfigureDbContext = b => b.UseSqlServer(connectionString,
+                        sql => sql.MigrationsAssembly(migrationsAssembly));
+                })
+                .AddOperationalStore(options =>
                 {
-                    policy.RequireAuthenticatedUser();
-                    policy.RequireClaim("scope", "api1");
+                    options.ConfigureDbContext = b => b.UseSqlServer(connectionString,
+                        sql => sql.MigrationsAssembly(migrationsAssembly));
                 });
+
+
+            services.AddAuthentication()
+            .AddGoogle("Google", options =>
+            {
+                options.SignInScheme = IdentityServerConstants.ExternalCookieAuthenticationScheme;
+
+                options.ClientId = "<insert here>";
+                options.ClientSecret = "<insert here>";
             });
 
-            // omitted for brevity
         }
 
-        public void Configure(IApplicationBuilder app)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (Environment.IsDevelopment())
+            if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-
-
             }
 
-            // uncomment if you want to add MVC
-            //app.UseStaticFiles();
-            //app.UseRouting();
-            
-            app.UseIdentityServer();
+            app.UseStaticFiles();
+            app.UseRouting();
 
-            // uncomment, if you want to add MVC
-            //app.UseAuthorization();
-            //app.UseEndpoints(endpoints =>
-            //{
-            //    endpoints.MapDefaultControllerRoute();
-            //});
+            app.UseIdentityServer();
+            app.UseAuthorization();
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapDefaultControllerRoute();
+            });
         }
     }
 }

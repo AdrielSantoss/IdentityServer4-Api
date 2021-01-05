@@ -49,7 +49,37 @@
           "dependencies": {
             "IdentityServer4": {
               "target": "Package",
-              "version": "[4.0.0, )"
+              "version": "[4.1.1, )"
+            },
+            "IdentityServer4.EntityFramework": {
+              "target": "Package",
+              "version": "[4.1.1, )"
+            },
+            "IdentityServer4.EntityFramework.Storage": {
+              "target": "Package",
+              "version": "[4.1.1, )"
+            },
+            "Microsoft.AspNetCore.Authentication.Google": {
+              "target": "Package",
+              "version": "[3.1.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[5.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite.Core": {
+              "target": "Package",
+              "version": "[5.0.1, )"
             },
             "Serilog.AspNetCore": {
               "target": "Package",

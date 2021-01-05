@@ -49,6 +49,17 @@ namespace Api
                 });
             });
 
+            services.AddCors(options =>
+            {
+                // this defines a CORS policy called "default"
+                options.AddPolicy("default", policy =>
+                {
+                    policy.WithOrigins("https://localhost:5003")
+                        .AllowAnyHeader()
+                        .AllowAnyMethod();
+                });
+            });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -60,6 +71,7 @@ namespace Api
             app.UseAuthentication(); //adiciona os serviços de autenticação ao DI e configura Bearercomo o esquema padrão.
             
             app.UseAuthorization(); //adiciona o middleware de autorização para garantir que nosso endpoint de API não possa ser acessado por clientes anônimos
+            app.UseCors("default");
 
             app.UseEndpoints(endpoints =>
             {
