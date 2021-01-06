@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "00Qsuwx4gux9Q5riquDL+PwS8XCDLCt/5sm8efT+RhXUUyvpdpvBaNsiRxSfaJSjEPqiUh1FSc5nZz3jS2gvHw==",
+  "dgSpecHash": "uxa8SriEHdDhu4LDpp+3os87hf65LQ4S43a4w4f/L7l5JdYjPvVolxXqhXcXcnKbqHIlsNbXWDz4byasm7bIMw==",
   "success": true,
   "projectFilePath": "C:\\Asantos\\Prototipos\\IdentityServer4\\IdentityServer\\IdentityServer.csproj",
   "expectedPackageFiles": [
@@ -30,6 +30,7 @@
     "C:\\Users\\asantos\\.nuget\\packages\\microsoft.entityframeworkcore.sqlite\\5.0.1\\microsoft.entityframeworkcore.sqlite.5.0.1.nupkg.sha512",
     "C:\\Users\\asantos\\.nuget\\packages\\microsoft.entityframeworkcore.sqlite.core\\5.0.1\\microsoft.entityframeworkcore.sqlite.core.5.0.1.nupkg.sha512",
     "C:\\Users\\asantos\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\5.0.1\\microsoft.entityframeworkcore.sqlserver.5.0.1.nupkg.sha512",
+    "C:\\Users\\asantos\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\5.0.1\\microsoft.entityframeworkcore.tools.5.0.1.nupkg.sha512",
     "C:\\Users\\asantos\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\5.0.0\\microsoft.extensions.caching.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\asantos\\.nuget\\packages\\microsoft.extensions.caching.memory\\5.0.0\\microsoft.extensions.caching.memory.5.0.0.nupkg.sha512",
     "C:\\Users\\asantos\\.nuget\\packages\\microsoft.extensions.configuration\\2.0.0\\microsoft.extensions.configuration.2.0.0.nupkg.sha512",

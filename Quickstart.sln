@@ -1,19 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26124.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServer", "IdentityServer\IdentityServer.csproj", "{A61D7507-6F9F-4265-9AD1-7077EAA2C374}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityServer", "IdentityServer\IdentityServer.csproj", "{A61D7507-6F9F-4265-9AD1-7077EAA2C374}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api", "Api\Api.csproj", "{D91E7B7E-98C4-47E7-ADBA-1B05D7C5E95A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api", "Api\Api.csproj", "{D91E7B7E-98C4-47E7-ADBA-1B05D7C5E95A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Client\Client.csproj", "{BBBDC234-828A-4387-8A81-B9F3496B713E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Client", "Client\Client.csproj", "{BBBDC234-828A-4387-8A81-B9F3496B713E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcClient", "MvcClient\MvcClient.csproj", "{C13C7806-4B31-40C4-B13E-45C1EB31556D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MvcClient", "MvcClient\MvcClient.csproj", "{C13C7806-4B31-40C4-B13E-45C1EB31556D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JavaScriptClient", "JavaScriptClient\JavaScriptClient.csproj", "{F57D3532-17E1-42D4-92FD-567E7FFBBE11}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFramework", "EntityFramework\EntityFramework.csproj", "{68854A6C-17FC-4FCE-887F-9199D6F241F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JavaScriptClient", "JavaScriptClient\JavaScriptClient.csproj", "{F57D3532-17E1-42D4-92FD-567E7FFBBE11}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,9 +21,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{A61D7507-6F9F-4265-9AD1-7077EAA2C374}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -88,17 +83,11 @@ Global
 		{F57D3532-17E1-42D4-92FD-567E7FFBBE11}.Release|x64.Build.0 = Release|Any CPU
 		{F57D3532-17E1-42D4-92FD-567E7FFBBE11}.Release|x86.ActiveCfg = Release|Any CPU
 		{F57D3532-17E1-42D4-92FD-567E7FFBBE11}.Release|x86.Build.0 = Release|Any CPU
-		{68854A6C-17FC-4FCE-887F-9199D6F241F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{68854A6C-17FC-4FCE-887F-9199D6F241F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{68854A6C-17FC-4FCE-887F-9199D6F241F3}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{68854A6C-17FC-4FCE-887F-9199D6F241F3}.Debug|x64.Build.0 = Debug|Any CPU
-		{68854A6C-17FC-4FCE-887F-9199D6F241F3}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{68854A6C-17FC-4FCE-887F-9199D6F241F3}.Debug|x86.Build.0 = Debug|Any CPU
-		{68854A6C-17FC-4FCE-887F-9199D6F241F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{68854A6C-17FC-4FCE-887F-9199D6F241F3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{68854A6C-17FC-4FCE-887F-9199D6F241F3}.Release|x64.ActiveCfg = Release|Any CPU
-		{68854A6C-17FC-4FCE-887F-9199D6F241F3}.Release|x64.Build.0 = Release|Any CPU
-		{68854A6C-17FC-4FCE-887F-9199D6F241F3}.Release|x86.ActiveCfg = Release|Any CPU
-		{68854A6C-17FC-4FCE-887F-9199D6F241F3}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F90DAD7A-37DE-406F-9574-A5804C47301E}
 	EndGlobalSection
 EndGlobal
